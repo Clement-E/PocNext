@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import {Heading} from "@/components/Heading";
+import {TicketItem} from "@/app/features/ticket/components/ticket-item";
 import {Placeholder} from "@/components/Placeholder";
 import {Button} from "@/components/ui/button";
 import {initialTickets} from "@/data";
@@ -31,8 +31,8 @@ const TicketPage =  async ({ params }: TicketPageProps) => {
         )
     }
     return (
-        <div className="flex flex-col flex-1 gap-y-8">
-            <Heading title={`Ticket Page ${ticketId}`} description={ticket.content} />
+        <div className="flex justify-center animate-fade-from-top">
+            <TicketItem ticket={ticket} isDetail />
         </div>
     );
 }
