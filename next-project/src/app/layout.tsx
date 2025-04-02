@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import {Header} from "@/components/Header";
+import {ThemeProvider} from "@/components/theme/theme-provider";
 
 
 export const metadata: Metadata = {
@@ -14,7 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html suppressHydrationWarning lang="en">
+    <ThemeProvider>
       <body
         className='antialiased'
       >
@@ -24,6 +26,7 @@ export default function RootLayout({
               {children}
           </main>
       </body>
+    </ThemeProvider>
     </html>
   );
 }
