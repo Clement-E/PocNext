@@ -1,9 +1,9 @@
 import Link from "next/link";
 import React from "react";
 import {TicketItem} from "@/app/features/ticket/components/ticket-item";
+import {getTicket} from "@/app/features/ticket/queries/get-ticket";
 import {Placeholder} from "@/components/Placeholder";
 import {Button} from "@/components/ui/button";
-import {initialTickets} from "@/data";
 import {ticketsPath} from "@/path";
 
 type TicketPageProps = {
@@ -12,10 +12,9 @@ type TicketPageProps = {
     }>;
 };
 
-const TicketPage =  async ({ params }: TicketPageProps) => {
+const TicketPage = async ({ params }: TicketPageProps) => {
 
-    const { ticketId } = await params;
-    const ticket = initialTickets.find(ticket => ticket.id === ticketId);
+    const ticket = await getTicket((await params).ticketId)
 
     if ( !ticket ) {
         return (
@@ -32,7 +31,7 @@ const TicketPage =  async ({ params }: TicketPageProps) => {
     }
     return (
         <div className="flex justify-center animate-fade-from-top">
-            <TicketItem ticket={ticket} isDetail />
+            <TicketItem ticket={ticket} isDetail/>
         </div>
     );
 }
