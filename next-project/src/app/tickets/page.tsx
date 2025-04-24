@@ -3,6 +3,11 @@ import {TicketList} from "@/app/features/ticket/components/ticket-list";
 import {Heading} from "@/components/Heading";
 import {Spinner} from "@/components/Spinner";
 
+// to make this page dynamically rendered
+// export const dynamic = "force-dynamic";
+// or time base rerendered
+// export const revalidate = 30;
+
 const TicketsPage = () => {
 
     return (

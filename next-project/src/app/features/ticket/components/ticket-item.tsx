@@ -17,7 +17,7 @@ const TicketItem = ({ ticket, isDetail }: TicketItemProps ) => {
 
   const detailButton = (
     <Button asChild size="icon" variant="outline">
-      <Link className={'text-sm underline'} href={ticketPath(ticket.id)}>
+      <Link prefetch className={'text-sm underline'} href={ticketPath(ticket.id)}>
         <LucideSquareArrowOutUpRight className="h-4 w-4"/>
       </Link>
     </Button>
