@@ -1,4 +1,3 @@
-
 import {notFound} from "next/navigation";
 import React from "react";
 import {TicketItem} from "@/app/features/ticket/components/ticket-item";
