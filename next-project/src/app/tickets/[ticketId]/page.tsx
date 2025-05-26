@@ -2,7 +2,6 @@ import {notFound} from "next/navigation";
 import React from "react";
 import {TicketItem} from "@/app/features/ticket/components/ticket-item";
 import {getTicket} from "@/app/features/ticket/queries/get-ticket";
-import {RedirectToast} from "@/components/redirect-toast";
 
 type TicketPageProps = {
     params: Promise<{
@@ -18,13 +17,9 @@ const TicketPage = async ({ params }: TicketPageProps) => {
         notFound();
     }
     return (
-      <>
-          <div className="flex justify-center animate-fade-from-top">
+      <div className="flex justify-center animate-fade-from-top">
             <TicketItem ticket={ticket} isDetail/>
-          </div>
-
-          <RedirectToast />
-      </>
+      </div>
     );
 }
 
