@@ -1,9 +1,9 @@
 import React, {Suspense} from "react";
-import {TicketList} from "@/app/features/ticket/components/ticket-list";
-import {TicketUpsertForm} from "@/app/features/ticket/components/ticket-upsert-form";
 import {CardCompact} from "@/components/card-compact";
-import {Heading} from "@/components/Heading";
-import {Spinner} from "@/components/Spinner";
+import {Heading} from "@/components/heading";
+import {Spinner} from "@/components/spinner";
+import {TicketList} from "@/features/ticket/components/ticket-list";
+import {TicketUpsertForm} from "@/features/ticket/components/ticket-upsert-form";
 
 // NB: to make this page dynamically rendered
 // export const dynamic = "force-dynamic";

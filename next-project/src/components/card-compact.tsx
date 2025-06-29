@@ -1,27 +1,39 @@
-import React from "react";
-import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
 
 type CardCompactProps = {
-  title: string,
-  content: React.ReactNode,
-  description: string,
-  className?: string,
-  footer?: React.ReactNode,
-}
+  title: string;
+  description: string;
+  className?: string;
+  content: React.ReactNode;
+  footer?: React.ReactNode;
+};
 
-const CardCompact = ({title, description, className, footer,  content}: CardCompactProps) => {
+const CardCompact = ({
+                       title,
+                       description,
+                       className,
+                       content,
+                       footer,
+                     }: CardCompactProps) => {
   return (
     <Card className={className}>
       <CardHeader>
-        <CardTitle>
-          <CardTitle>{title}</CardTitle>
-          <CardDescription>{description}</CardDescription>
-        </CardTitle>
+        <CardTitle>{title}</CardTitle>
+        <CardDescription>{description}</CardDescription>
       </CardHeader>
       <CardContent>{content}</CardContent>
-      {footer && <CardFooter>{footer}</CardFooter>}
+      {footer && (
+        <CardFooter className="flex justify-between">{footer}</CardFooter>
+      )}
     </Card>
-  )
-}
+  );
+};
 
-export { CardCompact }
+export { CardCompact };
